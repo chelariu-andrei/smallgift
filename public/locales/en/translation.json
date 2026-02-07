@@ -1,0 +1,59 @@
+{
+    "trap": {
+        "title": "Would you be my",
+        "valentine": "Valentine?",
+        "subtitle": "I have an important question for you...",
+        "yes": "Yes, of course!",
+        "no_placeholder": "",
+        "no_messages": [
+            "No",
+            "Are you sure?",
+            "Think again!",
+            "Don't be mean!",
+            "Last chance!",
+            "Really?",
+            "Yes!"
+        ]
+    },
+    "timeline": {
+        "title": "Our Journey",
+        "subtitle": "Scroll down to revisit our memories",
+        "next": "Continue",
+        "tocome": "And this isn't all, the best part is just beginning...",
+        "backToTop": "Back to Top"
+    },
+    "memory": {
+        "1": {
+            "date": "The Beginning",
+            "text": "It all started with a simple 'Hello'..."
+        },
+        "2": {
+            "date": "First Date",
+            "text": "I'll never forget your smile."
+        },
+        "3": {
+            "date": "Adventures",
+            "text": "Every moment with you is a new story."
+        }
+    },
+    "letter": {
+        "title": "A Message for You",
+        "instruction": "Hold the envelope to open...",
+        "opening": "Opening...",
+        "modal_title": "Dear Valentine,",
+        "p1": "I just wanted to say how grateful I am for everything.",
+        "p2": "Every day with you is a gift, and I hope this small gesture makes you smile.",
+        "signature": "Thank you for existing! ❤️",
+        "close": "Close Letter"
+    },
+    "end": {
+        "title": "Happy Valentine's Day!",
+        "subtitle": "I hope you liked this little surprise.",
+        "button": "A bouquet for you"
+    },
+    "nav": {
+        "memories": "Memories",
+        "letter": "Letter",
+        "foryou": "For You"
+    }
+}

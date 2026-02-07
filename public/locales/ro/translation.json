@@ -1,0 +1,59 @@
+{
+    "trap": {
+        "title": "Vrei să fii",
+        "valentine": "Valentina mea?",
+        "subtitle": "Am o întrebare importantă pentru tine...",
+        "yes": "Da, normal!",
+        "no_placeholder": "",
+        "no_messages": [
+            "Nu",
+            "Sigur nu?",
+            "Mai gândește-te!",
+            "Nu fi rea!",
+            "Ultima șansă!",
+            "Chiar nu?",
+            "Ba da!"
+        ]
+    },
+    "timeline": {
+        "title": "Călătoria noastră",
+        "subtitle": "Derulează în jos pentru a revedea amintirile",
+        "next": "Mai departe",
+        "tocome": "Și asta nu e tot, ce e mai frumos de acum o să înceapă...",
+        "backToTop": "Înapoi sus"
+    },
+    "memory": {
+        "1": {
+            "date": "Începutul",
+            "text": "Totul a început cu un simplu 'Bună'..."
+        },
+        "2": {
+            "date": "Prima întâlnire",
+            "text": "Nu voi uita niciodată cum zâmbeai."
+        },
+        "3": {
+            "date": "Aventuri",
+            "text": "Fiecare moment cu tine e o poveste nouă."
+        }
+    },
+    "letter": {
+        "title": "Un Mesaj pentru Tine",
+        "instruction": "Ține apăsat plicul pentru a deschide...",
+        "opening": "Deschid...",
+        "modal_title": "Dragă Valentine,",
+        "p1": "Voiam doar să îți spun cât de recunoscător sunt pentru tot.",
+        "p2": "Fiecare zi cu tine e un cadou, și sper ca acest mic gest să te facă să zâmbești.",
+        "signature": "Mulțumesc că exiști! ❤️",
+        "close": "Închide Scrisoarea"
+    },
+    "end": {
+        "title": "Happy Valentine's Day!",
+        "subtitle": "Sper că ți-a plăcut această mică surpriză.",
+        "button": "Un buchet pentru tine"
+    },
+    "nav": {
+        "memories": "Amintiri",
+        "letter": "Scrisoare",
+        "foryou": "Pentru Tine"
+    }
+}
