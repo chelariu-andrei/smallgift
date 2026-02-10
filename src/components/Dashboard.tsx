@@ -23,7 +23,7 @@ export default function Dashboard() {
     };
 
     return (
-        <div className="flex flex-col h-screen w-full bg-transparent relative overflow-hidden">
+        <div className="flex flex-col h-dvh w-full bg-transparent relative overflow-hidden">
             {/* Main Content Area */}
             <div className="flex-1 overflow-hidden relative">
                 <AnimatePresence mode="wait">
@@ -47,7 +47,7 @@ export default function Dashboard() {
                             animate={{ opacity: 1, scale: 1 }}
                             exit={{ opacity: 0, scale: 1.05 }}
                             transition={{ duration: 0.3 }}
-                            className="h-full w-full flex items-center justify-center p-4"
+                            className="h-full w-full flex items-center justify-center px-4 py-6"
                         >
                             <InteractiveLetter onOpen={() => { }} />
                         </motion.div>
@@ -60,7 +60,7 @@ export default function Dashboard() {
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -20 }}
                             transition={{ duration: 0.3 }}
-                            className="h-full w-full flex items-center justify-center p-4"
+                            className="h-full w-full flex items-center justify-center px-4 py-6"
                         >
                             <FlowerBurst />
                         </motion.div>
@@ -68,24 +68,24 @@ export default function Dashboard() {
                 </AnimatePresence>
             </div>
 
-            {/* Bottom Navigation Bar - Expert Design Refinement */}
-            <div className="h-24 bg-white/80 backdrop-blur-2xl border-t border-rose-100/50 flex items-center justify-around px-6 pb-6 pt-2 shadow-[0_-20px_40px_-15px_rgba(251,113,133,0.15)] z-50 rounded-t-[32px] mx-2 mb-2">
+            {/* Bottom Navigation Bar */}
+            <div className="flex-shrink-0 bg-white/75 backdrop-blur-2xl border-t border-rose-100/40 flex items-center justify-around px-2 pt-1.5 pb-[max(6px,env(safe-area-inset-bottom))] shadow-[0_-4px_20px_-8px_rgba(180,120,80,0.12)] z-50">
                 <NavButton
                     active={activeTab === 'memories'}
                     onClick={() => handleTabChange('memories')}
-                    icon={<Image className={cn("w-6 h-6", activeTab === 'memories' && "fill-rose-500")} />}
+                    icon={<Image className="w-[22px] h-[22px]" />}
                     label={t('nav.memories')}
                 />
                 <NavButton
                     active={activeTab === 'letter'}
                     onClick={() => handleTabChange('letter')}
-                    icon={<Mail className={cn("w-6 h-6", activeTab === 'letter' && "fill-rose-500")} />}
+                    icon={<Mail className="w-[22px] h-[22px]" />}
                     label={t('nav.letter')}
                 />
                 <NavButton
                     active={activeTab === 'foryou'}
                     onClick={() => handleTabChange('foryou')}
-                    icon={<Gift className={cn("w-6 h-6", activeTab === 'foryou' && "fill-rose-500")} />}
+                    icon={<Gift className="w-[22px] h-[22px]" />}
                     label={t('nav.foryou')}
                 />
             </div>
@@ -93,28 +93,37 @@ export default function Dashboard() {
     );
 }
 
-function NavButton({ active, onClick, icon }: { active: boolean, onClick: () => void, icon: React.ReactNode, label?: string }) {
+function NavButton({ active, onClick, icon, label }: { active: boolean, onClick: () => void, icon: React.ReactNode, label?: string }) {
     return (
         <button
             onClick={onClick}
             className={cn(
-                "flex flex-col items-center justify-center gap-1 w-16 transition-all duration-300 relative group",
-                active ? "text-rose-500" : "text-rose-300/70 hover:text-rose-400"
+                "flex flex-col items-center justify-center gap-0.5 min-w-[72px] min-h-[48px] py-1.5 transition-all duration-300 relative group rounded-2xl active:scale-95",
+                active ? "text-rose-600" : "text-rose-400/50 hover:text-rose-400"
             )}
         >
+            {/* Active pill background */}
+            {active && (
+                <motion.div
+                    layoutId="nav-pill"
+                    className="absolute inset-0 bg-rose-100/50 rounded-2xl"
+                    transition={{ type: "spring", stiffness: 350, damping: 30 }}
+                />
+            )}
+
             <div className={cn(
-                "p-3 rounded-2xl transition-all duration-300 transform",
-                active ? "bg-rose-50 shadow-sm scale-110 translate-y-[-2px]" : "bg-transparent group-hover:bg-rose-50/50"
+                "relative z-10 p-1 transition-all duration-300",
+                active && "transform scale-110"
             )}>
                 {icon}
             </div>
-            {active && (
-                <motion.div
-                    layoutId="nav-dot"
-                    className="absolute -bottom-2 w-1 h-1 bg-rose-500 rounded-full"
-                    transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                />
-            )}
+
+            <span className={cn(
+                "relative z-10 text-[10px] font-semibold tracking-wide transition-all duration-300 leading-none",
+                active ? "text-rose-600" : "text-rose-400/40"
+            )}>
+                {label}
+            </span>
         </button>
     );
 }
