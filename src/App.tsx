@@ -81,12 +81,12 @@ function MainApp() {
   const { startAutoplay } = useMusic();
 
   const handleLoginSuccess = () => {
-    startAutoplay();
     setView('landing');
   };
 
   const handleEnterApp = () => {
     playSound('success');
+    startAutoplay();
     setView('app');
   };
 
