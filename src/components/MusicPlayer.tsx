@@ -11,7 +11,7 @@ function formatTime(s: number) {
 }
 
 export default function MusicPlayer() {
-    const { currentTrack, isPlaying, progress, duration, volume, toggle, next, prev, setVolume, seekTo } = useMusic();
+    const { currentTrack, isPlaying, progress, duration, volume, toggle, next, prev, setVolume, seekTo, autoplayFailed } = useMusic();
 
     if (!currentTrack) return null;
 
@@ -81,12 +81,16 @@ export default function MusicPlayer() {
                         whileTap={{ scale: 0.85 }}
                         onClick={toggle}
                         className={cn(
-                            "p-2 rounded-full transition-all shadow-sm",
+                            "p-2 rounded-full transition-all shadow-sm relative",
                             isPlaying
                                 ? "bg-rose-500 text-white shadow-rose-300/50"
                                 : "bg-rose-100 text-rose-600"
                         )}
                     >
+                        {/* Pulse ring when autoplay failed */}
+                        {autoplayFailed && !isPlaying && (
+                            <span className="absolute inset-0 rounded-full animate-ping bg-rose-400/40" />
+                        )}
                         {isPlaying
                             ? <Pause className="w-4 h-4 fill-current" />
                             : <Play className="w-4 h-4 fill-current" />

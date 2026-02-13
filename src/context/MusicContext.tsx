@@ -32,6 +32,7 @@ interface MusicContextType {
     seekTo: (seconds: number) => void;
     selectTrack: (track: Track) => void;
     startAutoplay: () => void;
+    autoplayFailed: boolean;
 }
 
 /* ───────── Track list ───────── */
@@ -58,6 +59,8 @@ export function MusicProvider({ children }: { children: ReactNode }) {
     const playerRef = useRef<any>(null);
     const progressInterval = useRef<number | null>(null);
     const pendingAutoplay = useRef(false);
+    const autoplayTimer = useRef<number | null>(null);
+    const [autoplayFailed, setAutoplayFailed] = useState(false);
     const containerRef = useRef<HTMLDivElement>(null);
 
     // Load YouTube IFrame API
@@ -85,7 +88,6 @@ export function MusicProvider({ children }: { children: ReactNode }) {
         playerRef.current = new window.YT.Player('yt-hidden-player', {
             height: '1',
             width: '1',
-            host: 'https://www.youtube-nocookie.com',
             videoId: TRACKS[0].videoId,
             playerVars: {
                 autoplay: 0,
@@ -106,12 +108,21 @@ export function MusicProvider({ children }: { children: ReactNode }) {
                     if (pendingAutoplay.current) {
                         pendingAutoplay.current = false;
                         event.target.playVideo();
+                        // Check if playback actually started after a short delay
+                        autoplayTimer.current = window.setTimeout(() => {
+                            const state = playerRef.current?.getPlayerState?.();
+                            // If not playing (PLAYING = 1), autoplay was blocked
+                            if (state !== 1) {
+                                setAutoplayFailed(true);
+                            }
+                        }, 1500);
                     }
                 },
                 onStateChange: (event: any) => {
                     const state = event.data;
                     if (state === window.YT.PlayerState.PLAYING) {
                         setIsPlaying(true);
+                        setAutoplayFailed(false);
                         setDuration(playerRef.current?.getDuration?.() || 0);
                         startProgressTracking();
                     } else if (state === window.YT.PlayerState.PAUSED) {
@@ -195,8 +206,14 @@ export function MusicProvider({ children }: { children: ReactNode }) {
     const startAutoplay = useCallback(() => {
         if (playerReady && playerRef.current) {
             setCurrentTrack(TRACKS[0]);
-            // Just play — the video is already cued from init, no need to reload
             playerRef.current.playVideo();
+            // Detect if mobile browser silently blocked playback
+            autoplayTimer.current = window.setTimeout(() => {
+                const state = playerRef.current?.getPlayerState?.();
+                if (state !== 1) {
+                    setAutoplayFailed(true);
+                }
+            }, 1500);
         } else {
             pendingAutoplay.current = true;
         }
@@ -220,19 +237,21 @@ export function MusicProvider({ children }: { children: ReactNode }) {
             seekTo,
             selectTrack,
             startAutoplay,
+            autoplayFailed,
         }}>
-            {/* Hidden YouTube player container */}
+            {/* YouTube player — must be slightly visible for mobile Safari */}
             <div
                 ref={containerRef}
                 style={{
                     position: 'fixed',
-                    top: -100,
-                    left: -100,
+                    bottom: 0,
+                    left: 0,
                     width: 1,
                     height: 1,
-                    opacity: 0,
+                    opacity: 0.01,
                     pointerEvents: 'none',
                     zIndex: -1,
+                    overflow: 'hidden',
                 }}
             >
                 <div id="yt-hidden-player" />
