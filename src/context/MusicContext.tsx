@@ -85,6 +85,7 @@ export function MusicProvider({ children }: { children: ReactNode }) {
         playerRef.current = new window.YT.Player('yt-hidden-player', {
             height: '1',
             width: '1',
+            host: 'https://www.youtube-nocookie.com',
             videoId: TRACKS[0].videoId,
             playerVars: {
                 autoplay: 0,
@@ -94,6 +95,8 @@ export function MusicProvider({ children }: { children: ReactNode }) {
                 modestbranding: 1,
                 rel: 0,
                 playsinline: 1,
+                iv_load_policy: 3,
+                origin: window.location.origin,
             },
             events: {
                 onReady: (event: any) => {
@@ -192,7 +195,8 @@ export function MusicProvider({ children }: { children: ReactNode }) {
     const startAutoplay = useCallback(() => {
         if (playerReady && playerRef.current) {
             setCurrentTrack(TRACKS[0]);
-            playerRef.current.loadVideoById(TRACKS[0].videoId);
+            // Just play — the video is already cued from init, no need to reload
+            playerRef.current.playVideo();
         } else {
             pendingAutoplay.current = true;
         }
