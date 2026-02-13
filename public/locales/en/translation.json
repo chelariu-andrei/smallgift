@@ -129,6 +129,13 @@
     "nav": {
         "memories": "Memories",
         "letter": "Letter",
-        "foryou": "For You"
+        "foryou": "For You",
+        "playlist": "Playlist"
+    },
+    "playlist": {
+        "title": "Your Playlist",
+        "subtitle": "Our love songs 🎶",
+        "playing": "Playing",
+        "footer": "The soundtrack of our love story"
     }
 }

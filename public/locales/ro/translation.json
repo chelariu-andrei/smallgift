@@ -129,6 +129,13 @@
     "nav": {
         "memories": "Amintiri",
         "letter": "Scrisoare",
-        "foryou": "Pentru Tine"
+        "foryou": "Pentru Tine",
+        "playlist": "Muzică"
+    },
+    "playlist": {
+        "title": "Playlistul Tău",
+        "subtitle": "Melodiile noastre de dragoste 🎶",
+        "playing": "Redă",
+        "footer": "Coloana sonoră a poveștii noastre de dragoste"
     }
 }

@@ -1,19 +1,23 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Image, Mail, Gift } from 'lucide-react';
+import { Image, Mail, Gift, Music } from 'lucide-react';
 import TimelineSection from './TimelineSection';
 import InteractiveLetter from './InteractiveLetter';
 import FlowerBurst from './FlowerBurst';
+import PlaylistPage from './PlaylistPage';
+import MusicPlayer from './MusicPlayer';
 import useSound from '../hooks/useSound';
 import { cn } from '../lib/utils';
 import { useLanguage } from '../context/LanguageContext';
+import { useMusic } from '../context/MusicContext';
 
-type Tab = 'memories' | 'letter' | 'foryou';
+type Tab = 'memories' | 'letter' | 'foryou' | 'playlist';
 
 export default function Dashboard() {
     const [activeTab, setActiveTab] = useState<Tab>('memories');
     const playSound = useSound();
     const { t } = useLanguage();
+    const { currentTrack } = useMusic();
 
     const handleTabChange = (tab: Tab) => {
         if (activeTab !== tab) {
@@ -65,8 +69,24 @@ export default function Dashboard() {
                             <FlowerBurst />
                         </motion.div>
                     )}
+
+                    {activeTab === 'playlist' && (
+                        <motion.div
+                            key="playlist"
+                            initial={{ opacity: 0, x: 20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            exit={{ opacity: 0, x: -20 }}
+                            transition={{ duration: 0.3 }}
+                            className="h-full w-full"
+                        >
+                            <PlaylistPage />
+                        </motion.div>
+                    )}
                 </AnimatePresence>
             </div>
+
+            {/* Floating Music Player (shows when a track is loaded) */}
+            {currentTrack && <MusicPlayer />}
 
             {/* Bottom Navigation Bar */}
             <div className="flex-shrink-0 bg-white/75 backdrop-blur-2xl border-t border-rose-100/40 flex items-center justify-around px-2 pt-1.5 pb-[max(6px,env(safe-area-inset-bottom))] shadow-[0_-4px_20px_-8px_rgba(180,120,80,0.12)] z-50">
@@ -88,6 +108,12 @@ export default function Dashboard() {
                     icon={<Gift className="w-[22px] h-[22px]" />}
                     label={t('nav.foryou')}
                 />
+                <NavButton
+                    active={activeTab === 'playlist'}
+                    onClick={() => handleTabChange('playlist')}
+                    icon={<Music className="w-[22px] h-[22px]" />}
+                    label={t('nav.playlist')}
+                />
             </div>
         </div>
     );
@@ -98,7 +124,7 @@ function NavButton({ active, onClick, icon, label }: { active: boolean, onClick:
         <button
             onClick={onClick}
             className={cn(
-                "flex flex-col items-center justify-center gap-0.5 min-w-[72px] min-h-[48px] py-1.5 transition-all duration-300 relative group rounded-2xl active:scale-95",
+                "flex flex-col items-center justify-center gap-0.5 min-w-[60px] min-h-[48px] py-1.5 transition-all duration-300 relative group rounded-2xl active:scale-95",
                 active ? "text-rose-600" : "text-rose-400/50 hover:text-rose-400"
             )}
         >
@@ -119,7 +145,7 @@ function NavButton({ active, onClick, icon, label }: { active: boolean, onClick:
             </div>
 
             <span className={cn(
-                "relative z-10 text-[10px] font-semibold tracking-wide transition-all duration-300 leading-none",
+                "relative z-10 text-[9px] sm:text-[10px] font-semibold tracking-wide transition-all duration-300 leading-none",
                 active ? "text-rose-600" : "text-rose-400/40"
             )}>
                 {label}

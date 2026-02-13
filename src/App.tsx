@@ -5,6 +5,7 @@ import Dashboard from './components/Dashboard';
 import LoginGate, { LS_KEY } from './components/LoginGate';
 import useSound from './hooks/useSound';
 import { LanguageProvider, useLanguage } from './context/LanguageContext';
+import { MusicProvider, useMusic } from './context/MusicContext';
 
 // Define the stages of the journey
 type ViewState = 'login' | 'landing' | 'app';
@@ -77,8 +78,10 @@ function MainApp() {
 
   const [view, setView] = useState<ViewState>(getInitialView);
   const playSound = useSound();
+  const { startAutoplay } = useMusic();
 
   const handleLoginSuccess = () => {
+    startAutoplay();
     setView('landing');
   };
 
@@ -168,7 +171,9 @@ function MainApp() {
 export default function App() {
   return (
     <LanguageProvider>
-      <MainApp />
+      <MusicProvider>
+        <MainApp />
+      </MusicProvider>
     </LanguageProvider>
   );
 }
