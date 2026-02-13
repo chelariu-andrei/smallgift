@@ -1,4 +1,13 @@
 {
+    "login": {
+        "question": "On which date did I propose to you? 💍",
+        "hint": "Type the magic date",
+        "placeholder": "DDMMYYYY",
+        "error": "That's not the right date... try again!",
+        "success": "Correct! Welcome, my love!",
+        "submit": "Unlock Our Story",
+        "footer": "Made with love, just for you"
+    },
     "trap": {
         "title": "Would you be my",
         "valentine": "Valentine?",
@@ -19,31 +28,97 @@
         "title": "Our Journey",
         "subtitle": "Scroll down to revisit our memories",
         "next": "Continue",
+        "readmore": "Read More →",
         "tocome": "And this isn't all, the best part is just beginning...",
-        "backToTop": "Back to Top"
+        "backToTop": "Back to Top",
+        "adore": "Adore",
+        "adored": "Adored"
     },
     "memory": {
         "1": {
-            "date": "The Beginning",
-            "text": "It all started with a simple 'Hello'..."
+            "date": "The Beginning 📚",
+            "text": "It all started with a desire to learn, to grow, to collaborate. Our chance encounter at the library was nothing short of miraculous — two souls drawn together by curiosity and fate. Something extraordinary sparked that day, and the connection between us has been writing our story from 2022 until today. 💫"
         },
         "2": {
-            "date": "First Date",
-            "text": "I'll never forget your smile."
+            "date": "First Sparks ✨",
+            "text": "From the very first conversation, I knew you were different. You — the brilliant analyst with the sharpest mind I've ever known. Me — the devoted programmer who speaks in code. Together we discovered that logic and love are the most beautiful algorithm. 💕"
         },
         "3": {
-            "date": "Adventures",
-            "text": "Every moment with you is a new story."
+            "date": "Growing Together 🌱",
+            "text": "Every day with you brought something new — a lesson, a laugh, a quiet moment that meant the world. We understand each other on a level that goes beyond words. A programmer and an analyst, decoding life side by side. 🤝"
+        },
+        "4": {
+            "date": "Adventures 🗺️",
+            "text": "We explored new places, tried new things, and built memories that will last a lifetime. Every adventure is better because you're right next to me, sharing every smile and every sunset. 🌅"
+        },
+        "5": {
+            "date": "Our Love Language 💬",
+            "text": "I write code, you analyze data — but our true language is love. We complete each other like the perfect function returns the perfect result. Our mutual understanding is our superpower. 💪❤️"
+        },
+        "6": {
+            "date": "The Little Things 🌸",
+            "text": "It's not just the big moments. It's the morning coffees, the late-night talks, the quiet evenings when just being together is enough. These are the treasures I hold closest to my heart. ☕🌙"
+        },
+        "7": {
+            "date": "Falling Deeper 💗",
+            "text": "With every passing day, I fell more and more in love with you. Your strength, your kindness, your brilliant mind — everything about you makes my world brighter and more beautiful. 🌟"
+        },
+        "8": {
+            "date": "Dreams & Plans 🏡",
+            "text": "We started dreaming together — about our future, our home, our life. Two ambitious souls, one shared vision. A programmer and an analyst building not just careers, but a life filled with love. 💭"
+        },
+        "9": {
+            "date": "The Proposal 💍 — 21.02.2025",
+            "text": "My heart was racing, my hands were trembling, but my soul was certain. On February 21st, 2025, I asked you the most important question of my life. The emotions I felt in that moment — the joy, the nervousness, the overwhelming love — I will carry them forever. And when you said yes, the whole world stopped. That was the most magical day of my life. 🥹💍✨"
+        },
+        "10": {
+            "date": "She Said Yes! 🎉",
+            "text": "The moment you said 'Yes' changed everything. Suddenly every dream felt real, every plan felt possible. I promised myself that day that I would spend every moment making you the happiest person in the world. And I intend to keep that promise, forever. 💖🥂"
+        },
+        "11": {
+            "date": "Planning Our Forever 📋",
+            "text": "After the proposal, we dove into planning our future together. Every detail, every decision — made with so much love and excitement. The programmer in me wanted to organize everything perfectly, and the analyst in you made sure nothing was missed. The perfect team! 💑"
+        },
+        "12": {
+            "date": "Valentine's Day 2026 💝",
+            "text": "Happy Valentine's Day, my love! This year is so incredibly special — we're not just celebrating love, we're celebrating our journey to becoming husband and wife. You are my Valentine today and every day for the rest of my life. I love you beyond words. 💝🌹"
+        },
+        "13": {
+            "date": "Civil Wedding 🏛️ — 08.01.2026",
+            "text": "January 8th, 2026 — the day we made it official. The emotions at our civil ceremony were indescribable. Standing there, looking into your eyes, signing our names together — it was the most profound moment. We are officially partners in everything, and my heart has never been so full. 🥹💒"
+        },
+        "14": {
+            "date": "Officially Ours 💑",
+            "text": "After the civil wedding, everything felt different — more real, more beautiful. Waking up next to you knowing we are officially building our life together is the greatest gift. Every morning since January 8th has been magical. 🌅💑"
+        },
+        "15": {
+            "date": "Counting Down 📅 — 23.05.2026",
+            "text": "Our big day is coming — May 23rd, 2026! Our wedding will be one of the most important events of our lives. I can barely contain my excitement. Soon I'll watch you walk down the aisle, and I know that will be the moment I'll remember for the rest of my life. 👰🤵"
+        },
+        "16": {
+            "date": "Home Is You 🏠",
+            "text": "Wherever you are, that's where I feel at home. Your laughter is my favorite sound, your smile is my favorite view, and your arms are my favorite place. We've built something so beautiful together — not just a life, but a feeling of warmth and safety that I never want to lose. 💞🔥"
+        },
+        "17": {
+            "date": "My Promise 🤞",
+            "text": "I want to spend my entire life with you. Every morning, every evening, every ordinary Tuesday — I want them all with you. You are my person, my partner, my best friend, and the love of my life. This is my forever promise to you. 💍🤍"
+        },
+        "18": {
+            "date": "Forever & Always ♾️",
+            "text": "Our story is just beginning, and I can't wait to write every chapter together. From the library where it all started, to the altar where we'll say 'I do' — every step of this journey has been magical because it's been with you. I love you, today and always. ♾️❤️"
         }
     },
     "letter": {
         "title": "A Message for You",
         "instruction": "Hold the envelope to open...",
         "opening": "Opening...",
-        "modal_title": "Dear Valentine,",
-        "p1": "I just wanted to say how grateful I am for everything.",
-        "p2": "Every day with you is a gift, and I hope this small gesture makes you smile.",
-        "signature": "Thank you for existing! ❤️",
+        "modal_title": "My Dearest Love, 💌",
+        "p1": "I've been thinking about us a lot lately, and I just need you to know — meeting you was the greatest thing that ever happened to me. You walked into my life like a gentle storm and rearranged everything beautifully. 🌹",
+        "p2": "You make even the most ordinary days feel extraordinary. A simple coffee with you is worth more than any adventure without you. Your warmth, your kindness, the way you look at me — it all makes my heart feel so full. ☕💕",
+        "p3": "I still get butterflies when I think about our wedding on May 23rd. The thought of standing opposite you, saying our vows, promising forever — it fills me with a kind of happiness I didn't even know existed. 👰🤵✨",
+        "p4": "This Valentine's Day is different from all the others. We're not just two people in love — we're building a life together, step by step, day by day. And every single step with you feels like magic. 💝",
+        "p5": "I want you to always remember this: no matter what life brings, I choose you. Today, tomorrow, and every day after that. You are my heart, my home, and my everything. 🤍",
+        "signature": "Forever yours, with all my love ❤️",
         "close": "Close Letter"
     },
     "end": {

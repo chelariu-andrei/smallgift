@@ -48,12 +48,14 @@ export default function TimelineSection() {
         }
     };
 
-    // Generate 18 memories using local images
-    const memories = Array.from({ length: 18 }, (_, i) => ({
-        id: i + 1,
-        image: `/${i + 1}.jpeg`,
-        date: t(`memory.${(i % 3) + 1}.date`),
-        text: t(`memory.${(i % 3) + 1}.text`) + (i % 2 === 0 ? " This is a longer description to test the truncation logic. We want to make sure long text doesn't break the layout but can be expanded." : "")
+    // Image files available: 1-9, 11-18 (no 10.jpeg)
+    const imageNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14, 15, 16, 17, 18];
+
+    const memories = imageNumbers.map((imgNum, idx) => ({
+        id: idx + 1,
+        image: `${import.meta.env.BASE_URL}${imgNum}.jpeg`,
+        date: t(`memory.${idx + 1}.date`),
+        text: t(`memory.${idx + 1}.text`),
     }));
 
     return (
@@ -243,7 +245,7 @@ export default function TimelineSection() {
                                         )}
                                     >
                                         <Heart className={cn("w-3.5 h-3.5 sm:w-4 sm:h-4", likes[selectedMemory.id] && "fill-current")} />
-                                        {likes[selectedMemory.id] ? "Adored" : "Adore"}
+                                        {likes[selectedMemory.id] ? t('timeline.adored') : t('timeline.adore')}
                                     </button>
                                 </div>
                             </div>

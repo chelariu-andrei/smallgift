@@ -2,11 +2,12 @@ import { useState, useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import TrapLanding from './components/TrapLanding';
 import Dashboard from './components/Dashboard';
+import LoginGate, { LS_KEY } from './components/LoginGate';
 import useSound from './hooks/useSound';
 import { LanguageProvider, useLanguage } from './context/LanguageContext';
 
 // Define the stages of the journey
-type ViewState = 'landing' | 'app';
+type ViewState = 'login' | 'landing' | 'app';
 
 function LanguageToggle() {
   const { language, setLanguage } = useLanguage();
@@ -60,8 +61,26 @@ function FloatingHearts() {
 }
 
 function MainApp() {
-  const [view, setView] = useState<ViewState>('landing');
+  // Check localStorage to determine initial view
+  const getInitialView = (): ViewState => {
+    try {
+      const stored = localStorage.getItem(LS_KEY);
+      if (stored) {
+        const parsed = JSON.parse(stored);
+        if (parsed?.authenticated) return 'landing';
+      }
+    } catch {
+      // Ignore parse errors
+    }
+    return 'login';
+  };
+
+  const [view, setView] = useState<ViewState>(getInitialView);
   const playSound = useSound();
+
+  const handleLoginSuccess = () => {
+    setView('landing');
+  };
 
   const handleEnterApp = () => {
     playSound('success');
@@ -85,12 +104,12 @@ function MainApp() {
       {/* Background Image — Mobile */}
       <div
         className="fixed inset-0 z-0 block md:hidden bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/bg_mobile.jpeg')" }}
+        style={{ backgroundImage: `url('${import.meta.env.BASE_URL}bg_mobile.jpeg')` }}
       />
       {/* Background Image — Desktop */}
       <div
         className="fixed inset-0 z-0 hidden md:block bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/bg_laptop.jpeg')" }}
+        style={{ backgroundImage: `url('${import.meta.env.BASE_URL}bg_laptop.jpeg')` }}
       />
 
       {/* Warm overlay for readability */}
@@ -102,6 +121,20 @@ function MainApp() {
       <LanguageToggle />
 
       <AnimatePresence mode="wait">
+        {view === 'login' && (
+          <motion.div
+            key="login"
+            initial="initial"
+            animate="in"
+            exit="out"
+            variants={pageVariants}
+            transition={pageTransition}
+            className="w-full flex-1 flex items-center justify-center z-10"
+          >
+            <LoginGate onSuccess={handleLoginSuccess} />
+          </motion.div>
+        )}
+
         {view === 'landing' && (
           <motion.div
             key="landing"

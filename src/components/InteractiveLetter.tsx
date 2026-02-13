@@ -81,9 +81,9 @@ export default function InteractiveLetter({ onOpen }: InteractiveLetterProps) {
                     { scale: 1, opacity: 1, x: 0, y: 0, rotate: 0 }
                 }
                 transition={isThrowing ? { duration: 0.8, ease: "backIn" } : { duration: 0.5 }}
-                className="bg-white/95 backdrop-blur-xl p-5 sm:p-8 rounded-2xl shadow-xl border-2 border-amber-100 w-full max-w-md mx-auto text-center relative overflow-hidden"
+                className="bg-white/95 backdrop-blur-xl rounded-2xl shadow-xl border-2 border-amber-100 w-full max-w-md mx-auto text-center relative flex flex-col max-h-[85dvh] overflow-hidden"
             >
-                <div className="absolute top-0 left-0 w-full h-1.5 sm:h-2 bg-gradient-to-r from-rose-300 via-rose-400 to-rose-300"></div>
+                <div className="absolute top-0 left-0 w-full h-1.5 sm:h-2 bg-gradient-to-r from-rose-300 via-rose-400 to-rose-300 z-10"></div>
 
                 {/* Minimize button */}
                 <button
@@ -107,24 +107,33 @@ export default function InteractiveLetter({ onOpen }: InteractiveLetterProps) {
                     </motion.div>
                 )}
 
-                <Sparkles className="w-6 h-6 sm:w-8 sm:h-8 text-amber-400 absolute top-3 left-3 sm:top-4 sm:left-4 animate-pulse" />
+                {/* Scrollable content area */}
+                <div className="flex-1 overflow-y-auto p-5 sm:p-8 pt-6 sm:pt-8 overscroll-contain">
+                    <Sparkles className="w-6 h-6 sm:w-8 sm:h-8 text-amber-400 animate-pulse mb-2" />
 
-                <h3 className="text-2xl sm:text-3xl font-display font-bold text-rose-950 mb-4 sm:mb-6 mt-2">{t('letter.modal_title')}</h3>
+                    <h3 className="text-2xl sm:text-3xl font-display font-bold text-rose-950 mb-4 sm:mb-6 mt-1">{t('letter.modal_title')}</h3>
 
-                <div className="text-left space-y-3 sm:space-y-4 text-rose-950/90 text-sm sm:text-base leading-relaxed font-body">
-                    <p>{t('letter.p1')}</p>
-                    <p>{t('letter.p2')}</p>
-                    <p className="font-semibold text-rose-600">{t('letter.signature')}</p>
+                    <div className="text-left space-y-3 sm:space-y-4 text-rose-950/90 text-sm sm:text-base leading-relaxed font-body">
+                        <p>{t('letter.p1')}</p>
+                        <p>{t('letter.p2')}</p>
+                        <p>{t('letter.p3')}</p>
+                        <p>{t('letter.p4')}</p>
+                        <p>{t('letter.p5')}</p>
+                        <p className="font-semibold text-rose-600">{t('letter.signature')}</p>
+                    </div>
                 </div>
 
-                <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    onClick={handleClose}
-                    className="mt-6 sm:mt-8 px-8 py-3 bg-amber-400 text-white rounded-full font-bold shadow-md hover:bg-amber-500 transition-colors w-full active:bg-amber-600"
-                >
-                    {t('letter.close')}
-                </motion.button>
+                {/* Fixed bottom button */}
+                <div className="flex-shrink-0 px-5 sm:px-8 pb-5 sm:pb-8 pt-3">
+                    <motion.button
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        onClick={handleClose}
+                        className="px-8 py-3 bg-amber-400 text-white rounded-full font-bold shadow-md hover:bg-amber-500 transition-colors w-full active:bg-amber-600"
+                    >
+                        {t('letter.close')}
+                    </motion.button>
+                </div>
             </motion.div>
         );
     }

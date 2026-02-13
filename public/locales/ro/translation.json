@@ -1,4 +1,13 @@
 {
+    "login": {
+        "question": "La ce dată te-am cerut de soție? 💍",
+        "hint": "Scrie data magică",
+        "placeholder": "DDMMYYYY",
+        "error": "Nu e data corectă... mai încearcă!",
+        "success": "Corect! Bine ai venit, iubirea mea!",
+        "submit": "Deschide Povestea Noastră",
+        "footer": "Făcut cu dragoste, doar pentru tine"
+    },
     "trap": {
         "title": "Vrei să fii",
         "valentine": "Valentina mea?",
@@ -19,31 +28,97 @@
         "title": "Călătoria noastră",
         "subtitle": "Derulează în jos pentru a revedea amintirile",
         "next": "Mai departe",
+        "readmore": "Citește mai mult →",
         "tocome": "Și asta nu e tot, ce e mai frumos de acum o să înceapă...",
-        "backToTop": "Înapoi sus"
+        "backToTop": "Înapoi sus",
+        "adore": "Adoră",
+        "adored": "Adorat"
     },
     "memory": {
         "1": {
-            "date": "Începutul",
-            "text": "Totul a început cu un simplu 'Bună'..."
+            "date": "Începutul 📚",
+            "text": "Totul a început cu o dorință de a învăța, de a colabora. Prin întâlnirea noastră întâmplătoare de la bibliotecă, s-a întâmplat ceva miraculos — o conexiune instantanee între două suflete curioase. Acea clipă a scris începutul poveștii noastre, din 2022 până astăzi. 💫"
         },
         "2": {
-            "date": "Prima întâlnire",
-            "text": "Nu voi uita niciodată cum zâmbeai."
+            "date": "Primele Scântei ✨",
+            "text": "Din primele conversații, am știut că ești specială. Tu — analistul sclipitor cu mintea cea mai ascuțită pe care am cunoscut-o. Eu — programatorul devotat care vorbește în cod. Împreună am descoperit că logica și dragostea formează cel mai frumos algoritm. 💕"
         },
         "3": {
-            "date": "Aventuri",
-            "text": "Fiecare moment cu tine e o poveste nouă."
+            "date": "Creștem Împreună 🌱",
+            "text": "Fiecare zi cu tine a adus ceva nou — o lecție, un râs, un moment de liniște care a însemnat totul. Ne înțelegem la un nivel care depășește cuvintele. Un programator și un analist, descifrând viața unul lângă celălalt. 🤝"
+        },
+        "4": {
+            "date": "Aventuri 🗺️",
+            "text": "Am explorat locuri noi, am încercat lucruri noi și am construit amintiri care vor dura o viață. Fiecare aventură e mai frumoasă pentru că ești lângă mine, împărțind fiecare zâmbet și fiecare apus. 🌅"
+        },
+        "5": {
+            "date": "Limbajul Nostru 💬",
+            "text": "Eu scriu cod, tu analizezi date — dar limbajul nostru adevărat este dragostea. Ne completăm ca funcția perfectă care returnează rezultatul perfect. Înțelegerea noastră reciprocă este superputerea noastră. 💪❤️"
+        },
+        "6": {
+            "date": "Lucrurile Mici 🌸",
+            "text": "Nu sunt doar momentele mari. Sunt cafelele de dimineață, discuțiile până târziu în noapte, serile liniștite când doar a fi împreună e suficient. Acestea sunt comorile pe care le păstrez cel mai aproape de inimă. ☕🌙"
+        },
+        "7": {
+            "date": "Tot Mai Îndrăgostit 💗",
+            "text": "Cu fiecare zi care trece, m-am îndrăgostit tot mai mult de tine. Puterea ta, bunătatea ta, mintea ta sclipitoare — totul despre tine face lumea mea mai luminoasă și mai frumoasă. 🌟"
+        },
+        "8": {
+            "date": "Vise și Planuri 🏡",
+            "text": "Am început să visăm împreună — despre viitorul nostru, casa noastră, viața noastră. Două suflete ambițioase, o singură viziune comună. Un programator și un analist construind nu doar cariere, ci o viață plină de iubire. 💭"
+        },
+        "9": {
+            "date": "Cererea în Căsătorie 💍 — 21.02.2025",
+            "text": "Inima îmi bătea nebunește, mâinile îmi tremurau, dar sufletul meu era sigur. Pe 21 februarie 2025, ți-am pus cea mai importantă întrebare din viața mea. Emoțiile pe care le-am simțit în acel moment — bucuria, nervozitatea, dragostea copleșitoare — le voi purta cu mine pentru totdeauna. Și când ai spus da, lumea întreagă s-a oprit. A fost cea mai magică zi din viața mea. 🥹💍✨"
+        },
+        "10": {
+            "date": "A Spus Da! 🎉",
+            "text": "Momentul în care ai spus 'Da' a schimbat totul. Brusc, fiecare vis părea real, fiecare plan părea posibil. Mi-am promis în acea zi că voi petrece fiecare moment făcându-te cea mai fericită persoană din lume. Și intenționez să țin această promisiune, pentru totdeauna. 💖🥂"
+        },
+        "11": {
+            "date": "Planificăm Veșnicia 📋",
+            "text": "După cererea în căsătorie, ne-am aruncat în planificarea viitorului împreună. Fiecare detaliu, fiecare decizie — luată cu atâta dragoste și entuziasm. Programatorul din mine a vrut să organizeze totul perfect, iar analistul din tine s-a asigurat că nimic nu a fost uitat. Echipa perfectă! 💑"
+        },
+        "12": {
+            "date": "Ziua Îndrăgostiților 2026 💝",
+            "text": "La mulți ani de Ziua Îndrăgostiților, iubirea mea! Anul acesta e incredibil de special — nu celebrăm doar dragostea, ci călătoria noastră spre a deveni soț și soție. Ești Valentina mea azi și în fiecare zi pentru tot restul vieții mele. Te iubesc dincolo de cuvinte. 💝🌹"
+        },
+        "13": {
+            "date": "Cununia Civilă 🏛️ — 08.01.2026",
+            "text": "8 ianuarie 2026 — ziua în care am oficializat totul. Emoțiile de la cununia civilă au fost de nedescris. Stând acolo, privindu-te în ochi, semnând numele noastre împreună — a fost cel mai profund moment. Suntem oficial parteneri în toate, și inima mea nu a fost niciodată atât de plină. 🥹💒"
+        },
+        "14": {
+            "date": "Oficial Ai Noștri 💑",
+            "text": "După cununia civilă, totul a părut diferit — mai real, mai frumos. Să mă trezesc lângă tine știind că oficial ne construim viața împreună este cel mai mare dar. Fiecare dimineață de la 8 ianuarie a fost magică. 🌅💑"
+        },
+        "15": {
+            "date": "Numărătoarea Inversă 📅 — 23.05.2026",
+            "text": "Marea zi se apropie — 23 mai 2026! Nunta noastră va fi unul dintre cele mai importante evenimente din viața noastră. Abia îmi mai pot stăpâni emoțiile. Curând te voi privi mergând pe culoar, și știu că acela va fi momentul pe care mi-l voi aminti tot restul vieții. 👰🤵"
+        },
+        "16": {
+            "date": "Acasă Ești Tu 🏠",
+            "text": "Oriunde ești tu, acolo mă simt acasă. Râsul tău e sunetul meu preferat, zâmbetul tău e priveliștea mea preferată, iar brațele tale sunt locul meu preferat. Am construit împreună ceva atât de frumos — nu doar o viață, ci un sentiment de căldură și siguranță pe care nu vreau să-l pierd niciodată. 💞🔥"
+        },
+        "17": {
+            "date": "Promisiunea Mea 🤞",
+            "text": "Vreau să îmi petrec toată viața cu tine. Fiecare dimineață, fiecare seară, fiecare marți obișnuită — le vreau pe toate cu tine. Ești persoana mea, partenerul meu, cel mai bun prieten al meu și dragostea vieții mele. Aceasta este promisiunea mea de-o viață pentru tine. 💍🤍"
+        },
+        "18": {
+            "date": "Pentru Totdeauna ♾️",
+            "text": "Povestea noastră abia începe, și abia aștept să scriem fiecare capitol împreună. De la biblioteca unde totul a început, până la altarul unde vom spune 'Accept' — fiecare pas al acestei călătorii a fost magic pentru că a fost cu tine. Te iubesc, azi și întotdeauna. ♾️❤️"
         }
     },
     "letter": {
         "title": "Un Mesaj pentru Tine",
         "instruction": "Ține apăsat plicul pentru a deschide...",
         "opening": "Deschid...",
-        "modal_title": "Dragă Valentine,",
-        "p1": "Voiam doar să îți spun cât de recunoscător sunt pentru tot.",
-        "p2": "Fiecare zi cu tine e un cadou, și sper ca acest mic gest să te facă să zâmbești.",
-        "signature": "Mulțumesc că exiști! ❤️",
+        "modal_title": "Dragostea mea, 💌",
+        "p1": "M-am gândit mult la noi în ultima vreme și trebuie să știi — să te întâlnesc a fost cel mai frumos lucru care mi s-a întâmplat vreodată. Ai intrat în viața mea ca o furtună blândă și ai rearanjat totul în mod minunat. 🌹",
+        "p2": "Tu faci și cele mai obișnuite zile să pară extraordinare. O simplă cafea cu tine valorează mai mult decât orice aventură fără tine. Căldura ta, bunătatea ta, felul în care mă privești — toate astea îmi umplu inima. ☕💕",
+        "p3": "Încă simt fluturi în stomac când mă gândesc la nunta noastră din 23 mai. Gândul că voi sta în fața ta, spunând jurămintele noastre, promițând veșnicia — mă umple cu o fericire pe care nici nu știam că există. 👰🤵✨",
+        "p4": "Ziua Îndrăgostiților de anul acesta e diferită de toate celelalte. Nu suntem doar doi oameni îndrăgostiți — ne construim o viață împreună, pas cu pas, zi de zi. Și fiecare pas cu tine pare magic. 💝",
+        "p5": "Vreau să ții minte mereu asta: indiferent ce ne aduce viața, eu te aleg pe tine. Azi, mâine și în fiecare zi de după. Ești inima mea, casa mea și totul meu. 🤍",
+        "signature": "Al tău pentru totdeauna, cu toată dragostea ❤️",
         "close": "Închide Scrisoarea"
     },
     "end": {
